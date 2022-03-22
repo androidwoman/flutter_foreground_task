@@ -206,6 +206,7 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 			}
 			val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 			nm.createNotificationChannel(channel)
+			Log.i("avatar path",notificationOptions.avatarPath)
 			var path= BitmapFactory.decodeFile(File(notificationOptions.avatarPath).absolutePath)
 			val builder = Notification.Builder(this, notificationOptions.channelId)
 			builder.setOngoing(true)

@@ -130,6 +130,7 @@ class ForegroundServiceManager {
 		val notificationChannelImportance = call.argument<Int>(ForegroundServicePrefsKey.NOTIFICATION_CHANNEL_IMPORTANCE) ?: 3
 		val notificationPriority = call.argument<Int>(ForegroundServicePrefsKey.NOTIFICATION_PRIORITY) ?: 0
 		val notificationContentTitle = call.argument<String>(ForegroundServicePrefsKey.NOTIFICATION_CONTENT_TITLE) ?: ""
+		val avatarPath = call.argument<String>(ForegroundServicePrefsKey.AVATAR_PATH) ?: ""
 		val notificationContentText = call.argument<String>(ForegroundServicePrefsKey.NOTIFICATION_CONTENT_TEXT) ?: ""
 		val enableVibration = call.argument<Boolean>(ForegroundServicePrefsKey.ENABLE_VIBRATION) ?: false
 		val playSound = call.argument<Boolean>(ForegroundServicePrefsKey.PLAY_SOUND) ?: false
@@ -161,6 +162,7 @@ class ForegroundServiceManager {
 			putInt(ForegroundServicePrefsKey.NOTIFICATION_CHANNEL_IMPORTANCE, notificationChannelImportance)
 			putInt(ForegroundServicePrefsKey.NOTIFICATION_PRIORITY, notificationPriority)
 			putString(ForegroundServicePrefsKey.NOTIFICATION_CONTENT_TITLE, notificationContentTitle)
+			putString(ForegroundServicePrefsKey.AVATAR_PATH, avatarPath)
 			putString(ForegroundServicePrefsKey.NOTIFICATION_CONTENT_TEXT, notificationContentText)
 			putBoolean(ForegroundServicePrefsKey.ENABLE_VIBRATION, enableVibration)
 			putBoolean(ForegroundServicePrefsKey.PLAY_SOUND, playSound)
