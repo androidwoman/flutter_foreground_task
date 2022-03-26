@@ -225,11 +225,13 @@ class ForegroundService: Service(), MethodChannel.MethodCallHandler {
 			}
 			startForeground(notificationOptions.serviceId, builder.build())
 		} else {
+			var path= BitmapFactory.decodeFile(File(notificationOptions.avatarPath).absolutePath)
 			val builder = NotificationCompat.Builder(this, notificationOptions.channelId)
 			builder.setOngoing(true)
 			builder.setShowWhen(notificationOptions.showWhen)
 			builder.setSmallIcon(iconResId)
 			builder.setContentIntent(pendingIntent)
+			builder.setLargeIcon(path)
 			builder.setContentTitle(notificationOptions.contentTitle)
 			builder.setContentText(notificationOptions.contentText)
 			builder.setVisibility(notificationOptions.visibility)
